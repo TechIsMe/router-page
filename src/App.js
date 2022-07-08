@@ -1,12 +1,17 @@
-import './App.css';
+// import './App.css';
 import {Route} from 'react-router-dom';
-
-import WelcomePage from './Components/WelcomePage';
-import Product from './Components/Product';
-
+import WelcomePage from './pages/WelcomePage';
+import Product from './pages/Product';
+import MainHeader from './Components/MainHeader';
+import ProductDetail from './pages/ProductDetail';
 function App() {
   return (
-    <div className="App">
+    <div>
+      {/* <header>
+
+      </header> */}
+      <MainHeader />
+      <main>
       <Route path="/welcome">
         <WelcomePage />
       </Route>
@@ -14,6 +19,11 @@ function App() {
       <Route path="/product">
         <Product />
       </Route>
+
+      <Route path="/productdetail/:productId">
+        <ProductDetail />
+      </Route>
+      </main>
     </div>
   );
 }
